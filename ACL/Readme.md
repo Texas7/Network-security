@@ -1,5 +1,7 @@
 ## Configuring ACLs
 
+------------------------
+
 ```
 ip access-list standard list_name
 or
@@ -42,6 +44,8 @@ show ip interface <f/g>
 <br>
 <br>
 
+------------------------
+
 #### Comando para auxiliar no detalhamento das configurações: 
 ##### Também serve para aplicar as permissões:
 
@@ -72,6 +76,11 @@ no line_number
 
 <br><br><br>
 
+------------------------
+
+<br>
+
+![unknown](https://user-images.githubusercontent.com/104938729/187745574-468096df-76be-43a5-8125-47fd2e495414.png)
 
 -----------------------------
 
