@@ -1,6 +1,6 @@
 ## Configuring ACLs
 
-> Exemplos na pagina da <a href="https://www.cisco.com/c/pt_br/support/docs/ip/access-lists/26448-ACLsamples.html">cisco</a>
+> Exemplos na pagina da <a target="_blank" href="https://www.cisco.com/c/pt_br/support/docs/ip/access-lists/26448-ACLsamples.html">cisco</a>
 
 ------------------------
 
