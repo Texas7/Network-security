@@ -1,5 +1,7 @@
 ## Configuring ACLs
 
+> Exemplos na pagina da <a href="https://www.cisco.com/c/pt_br/support/docs/ip/access-lists/26448-ACLsamples.html">cisco</a>
+
 ------------------------
 
 ```
@@ -11,16 +13,14 @@ deny any
 or
 permit any
 ```
-> Exemplos na pagina da <a href="https://www.cisco.com/c/pt_br/support/docs/ip/access-lists/26448-ACLsamples.html">cisco</a>
 
-
-##### Checking applications
+#### Checking applications:
 
 ```
 show access-lists
 ```
 
-#### On interface 
+#### On interface:
 
 ```
 interface <f/g>
@@ -31,7 +31,7 @@ ip access-group list_name in
 ```
 > Não é boa prática aplicar listas de acesso enquanto a interface está ativa, evite se possível.
 
-##### Checking applications
+##### Checking applications:
 
 ```
 show access-lists
@@ -46,8 +46,8 @@ show ip interface <f/g>
 
 ------------------------
 
-#### Comando para auxiliar no detalhamento das configurações: 
-##### Também serve para aplicar as permissões:
+## Comandos para auxiliar no detalhamento das configurações: 
+#### Também serve para aplicar as permissões:
 
 ```
 access-list ?
