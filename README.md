@@ -213,7 +213,100 @@ Switch#show mac-address-table
 
 #### Criação de VLAN:
 
+```
+Switch(config)#vlan “id” 
+Switch(config-vlan)#name “nome”
+```
 
+#### Criar um range de interfaces seqüenciais:
+
+```
+Switch(config)#interface range f0/1-10 
+Switch(config-if-range)# 
+```
+
+#### Criar um range de interfaces específicas: 
+
+```
+Switch(config)#interface range f0/1,f0/3,f0/5 
+Switch(config-if-range)# 
+```
+
+#### Configurar porta em modo de acesso e associar a uma vlan:
+
+```
+Switch(config)#interface f0/1 
+Switch(config-if)#switchport mode access 
+Switch(config-if)#switchport access vlan “id” 
+```
+
+#### Configurar porta em modo tronco (via das vlan´s):
+
+```
+Switch(config)#interface f0/1 
+Switch(config-if)#switchport mode trunk
+```
+
+#### Redefinir vlan´s permitidas no tronco sendo as não listadas negadas:
+
+```
+Switch(config-if)#switchport trunk allowed vlan id, id, id
+```
+
+#### Verificar troncos ativos na configuração:
+
+```
+Switch(config)#show interfaces trunk 
+```
+
+#### Verificar tabela de VLAN e associação de portas:
+
+```
+Switch#show vlan brief
+```
+
+----------------------------------------
+
+<br>
+<br>
+<br>
+<br>
+
+## Roteamento Inter-Vlan (subinterface + protocolo de entroncamento 802.1q)
+
+## Configuração do Router
+
+#### Criação de subinterface e entroncamento:
+
+```
+Subinterface a partir da interface g0/0 
+
+Router(config)#interface g0/0.”id de vlan” Exemplo g0/0.10 (Vlan 10)
+Router(config-subif)#encapsulation dot1Q "id de vlan" 
+Router(config-subif)#ip address "end ip” “mascara” 
+
+OBS: Crie 1 subinterface por VLAN 
+Exemplo (VLAN 10 = g0/0.10 VLAN 20 = g0/0.20 VLAN 30 = g0/0.30) 
+```
+
+#### A ativação da interface é efetuada na interface física:
+
+```
+Router(config)#interface g0/0 
+Router(config-if)#no shutdown
+```
+
+#### Configuração do DHCP snooping: 
+
+```
+Switch(config)#ip dhcp snoopinp 
+Switch(config)#ip dhcp snooping vlan "id" 
+Switch(config)#interface f0/1 (a porta que está conectada ao server DHCP) 
+Switch(config-if)# ip dhcp snooping trust 
+```
+> No Switch !!!
+
+--------------------------
 
 
 
