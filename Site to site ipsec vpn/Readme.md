@@ -19,12 +19,13 @@ reload
 
 <br><br>
 
+# Router 1:
 
 #### Creating an access-list:
 
 ```
 access-list 110 permit ip 192.168.1.0 0.0.0.255 192.168.3.0 0.0.0.255
-				                   "current network"        "destination"
+			    "current network"        "destination"
 ```
 
 #### De acordo com os métodos solicitadas
@@ -42,14 +43,14 @@ group 5
 exit
 
 crypto isakmp key vpnpa55 address 10.2.2.2    > Endereço do roteador de destino.
-		             "set_key"
+		 "set_key"
 ```
 
 #### Configuring the IKE Phase 2 IPsec policy on Router1:
 
 ```
 crypto ipsec transform-set VPN-SET esp-aes esp-sha-hmac
-				 "set_name"
+			 "set_name"
 
 crypto map VPN-MAP 10 ipsec-isakmp
 
@@ -71,6 +72,9 @@ interface s0/0/0           > Example
 
 crypto map VPN-MAP
 ```
+<br><br><br>
+
+# Router 2:
 
 #### In other Router:
 #### Configuring IPsec Parameters on Router33
@@ -79,7 +83,7 @@ crypto map VPN-MAP
 
 ```
 access-list 110 permit ip 192.168.3.0 0.0.0.255 192.168.1.0 0.0.0.255
-				                   "current network"        "destination"
+			    "current network"        "destination"
 ```
 
 #### Configuring the IKE Phase 1 ISAKMP properties on Router33:
@@ -96,14 +100,14 @@ group 5
 exit
 
 crypto isakmp key vpnpa55 address 10.1.1.2    > Endereço do roteador de destino.
-		             "same_key"
+		 "same_key"
 ```
 
 #### Configuring the IKE Phase 2 IPsec policy on Router33:
 
 ```
 crypto ipsec transform-set VPN-SET esp-aes esp-sha-hmac
-				                  "set_name"
+			  "set_name"
 
 crypto map VPN-MAP 10 ipsec-isakmp
 
